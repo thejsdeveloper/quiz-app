@@ -35,7 +35,7 @@
 ```sh
   yarn install
 
-  #or
+#or
 
   npm install
 ```
@@ -44,8 +44,11 @@
 
 ```sh
   yarn dev
+
 #or
+
   npm run dev
+
 ```
 
 #### Go to the browser
