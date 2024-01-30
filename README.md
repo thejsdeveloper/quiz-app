@@ -21,7 +21,7 @@
 #### Clone the repo by running
 
 ```sh
- git clone https://github.com/thejsdeveloper/.git
+ git clone https://github.com/thejsdeveloper/quiz-app.git
 ```
 
 #### Go to project directory
