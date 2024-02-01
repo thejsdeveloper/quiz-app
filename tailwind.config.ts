@@ -16,7 +16,6 @@ const config: Config = {
       },
       white: {
         DEFAULT: "#FFFFFF",
-        60: "rgba(255, 99, 71, 0.6)",
       },
       red: {
         DEFAULT: "#3B199C",

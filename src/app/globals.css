@@ -7,10 +7,10 @@
     @apply text-1.75xl md:text-2.8xl font-bold text-white;
   }
   h2 {
-    @apply text-lg md:text-2xl font-bold text-white;
+    @apply text-lg md:text-2xl font-semibold text-white;
   }
   h3 {
-    @apply text-base md:text-xl font-bold text-white;
+    @apply text-base md:text-xl font-medium text-white;
   }
   button {
     @apply text-lg font-bold hover:bg-blue-light;
