@@ -30,6 +30,10 @@
     @apply text-xs md:text-sm font-semibold;
   }
 
+  .btn {
+    @apply text-lg font-bold hover:bg-blue-light text-center;
+  }
+
   .btn-primary {
     @apply bg-blue;
   }

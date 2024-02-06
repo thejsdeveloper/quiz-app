@@ -1,7 +1,7 @@
 export type QuestionType = "multiple";
 export type DifficultyLevel = "easy" | "medium" | "hard";
 
-export type QuestionResponse = {
+export type QuestionBase = {
   type: QuestionType;
   difficulty: DifficultyLevel;
   category: string;
@@ -10,9 +10,12 @@ export type QuestionResponse = {
   incorrect_answers: string[];
 };
 
-export type Question = QuestionResponse & {
-  answers: string[];
-  userAnswer: string;
-  isCorrectAnswer: boolean;
-  attempted: boolean;
+export type QuestionResponse = {
+  response_code: number;
+  results: QuestionBase[];
+};
+
+export type Question = QuestionBase & {
+  options: string[];
+  userAnswer?: string;
 };
