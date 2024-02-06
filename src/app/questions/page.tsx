@@ -1,19 +1,15 @@
-import { OPEN_TDB_URL } from "@/constants/api";
-import Link from "next/link";
+import { getQuestions } from "@/api/questions";
+import QuestionProvider from "../store/QuestionProvider";
+import Question from "@/app/components/Question";
 
-const getQuestions = async () => {
-  const res = await fetch(OPEN_TDB_URL);
-  return res.json();
-};
-
-export default async function QuestionPage() {
+export default async function QuestionLayout() {
   const questions = await getQuestions();
 
   return (
-    <main className="flex min-h-screen flex-col items-center p-24 text-white">
-      This is Question Page
-      <Link href="/">Home Page</Link>
-      {JSON.stringify(questions)}
-    </main>
+    <QuestionProvider questions={questions}>
+      <section className="flex flex-col items-center p-24 text-white">
+        <Question />
+      </section>
+    </QuestionProvider>
   );
 }
