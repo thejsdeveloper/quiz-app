@@ -7,9 +7,7 @@ export default async function QuestionLayout() {
 
   return (
     <QuestionProvider questions={questions}>
-      <section className="flex flex-col items-center p-24 text-white">
-        <Question />
-      </section>
+      <Question />
     </QuestionProvider>
   );
 }

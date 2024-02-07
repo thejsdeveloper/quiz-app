@@ -23,7 +23,7 @@ export default function RootLayout({
       <body className={nunito.className}>
         <main
           className="bg-blue-dark min-h-screen 
-            flex items-center justify-center
+            flex items-center justify-center px-5 md:px-12
           "
         >
           {children}
