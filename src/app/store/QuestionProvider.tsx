@@ -7,7 +7,7 @@ import { immer } from "zustand/middleware/immer";
 
 type State = {
   questions: Question[];
-  currentQuestion: number;
+  currentQuestionIndex: number;
 };
 
 type Actions = {
@@ -19,7 +19,7 @@ type Actions = {
 
 const initialState: State = {
   questions: [],
-  currentQuestion: 0,
+  currentQuestionIndex: 0,
 };
 
 const createStore = (questions: Question[]) =>

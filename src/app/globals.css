@@ -13,7 +13,7 @@
     @apply text-base md:text-xl font-medium text-white;
   }
   button {
-    @apply text-lg font-bold hover:bg-blue-light;
+    @apply text-base md:text-xl font-bold hover:bg-blue-light;
   }
 }
 
@@ -32,6 +32,10 @@
 
   .btn {
     @apply text-lg font-bold hover:bg-blue-light text-center;
+  }
+
+  .btn-default {
+    @apply rounded-2xl text-left p-5 border;
   }
 
   .btn-primary {
