@@ -11,10 +11,8 @@ type State = {
 };
 
 type Actions = {
-  setQuestions: (questions: Question[]) => void;
-  // setCurrentQuestion: (index: number) => void;
-  // recordAnswer: (answer: string, questionIndex: number) => void;
-  // reset: () => void;
+  goToNextQuestion: () => void;
+  recordAnswer: (answer: string) => void;
 };
 
 const initialState: State = {
@@ -27,8 +25,18 @@ const createStore = (questions: Question[]) =>
     immer((set) => ({
       ...initialState,
       questions: questions,
-      setQuestions(questions: Question[]) {
-        set({ questions });
+      recordAnswer: (answer: string) => {
+        set((state) => {
+          state.questions[state.currentQuestionIndex].userAnswer = answer;
+        });
+      },
+      goToNextQuestion: () => {
+        set(({ currentQuestionIndex }) => ({
+          currentQuestionIndex:
+            currentQuestionIndex < 9
+              ? currentQuestionIndex + 1
+              : currentQuestionIndex,
+        }));
       },
     }))
   );

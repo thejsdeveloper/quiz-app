@@ -19,7 +19,9 @@ const getRandomizeQuestions = (questions: QuestionBase[]): Question[] => {
   return questions.map((question) => {
     return {
       ...question,
-      question: question.question.replace(/&quot;/g, '"'),
+      question: question.question
+        .replace(/&quot;/g, '"')
+        .replace(/&#039;/g, "'"),
       options: randomize([
         ...question.incorrect_answers,
         question.correct_answer,
