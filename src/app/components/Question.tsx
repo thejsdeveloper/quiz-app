@@ -5,8 +5,11 @@ import { useQuestions } from "../store/QuestionProvider";
 import Image from "next/image";
 import correctIcon from "#/assets/icons/correct-answer-icon.svg";
 import incorrectIcon from "#/assets/icons/wrong-answer-icon.svg";
+import { useRouter } from "next/navigation";
 
 function Question() {
+  const router = useRouter();
+
   const questions = useQuestions()((state) => state.questions);
   const currentQuestionIndex = useQuestions()(
     (state) => state.currentQuestionIndex
@@ -48,7 +51,9 @@ function Question() {
     return "btn-default";
   };
 
-  const checkResults = () => {};
+  const checkResults = () => {
+    router.push("/summery");
+  };
 
   return (
     <section
