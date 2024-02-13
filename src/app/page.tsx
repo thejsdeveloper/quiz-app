@@ -9,6 +9,7 @@ export default function Home() {
         flex flex-col items-center justify-center
         gap-8
         p-3
+        mx-5 md:mx-12
       "
     >
       <Image src={logo} alt="Logo" className="w-1/2" priority />

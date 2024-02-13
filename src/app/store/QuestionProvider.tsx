@@ -13,6 +13,8 @@ type State = {
 type Actions = {
   goToNextQuestion: () => void;
   recordAnswer: (answer: string) => void;
+  resetQuestions: (questions: Question[]) => void;
+  resetStore: () => void;
 };
 
 const initialState: State = {
@@ -37,6 +39,15 @@ const createStore = (questions: Question[]) =>
               ? currentQuestionIndex + 1
               : currentQuestionIndex,
         }));
+      },
+      resetQuestions: (questions: Question[]) => {
+        set({
+          ...initialState,
+          questions: questions,
+        });
+      },
+      resetStore: () => {
+        set(initialState);
       },
     }))
   );

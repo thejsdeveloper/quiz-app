@@ -1,11 +1,18 @@
 import type { Metadata } from "next";
-import { Nunito } from "next/font/google";
+import { Nunito, Redacted_Script } from "next/font/google";
 import "./globals.css";
 
 const nunito = Nunito({
   subsets: ["latin"],
   display: "fallback",
   weight: "variable",
+});
+
+const redactedFont = Redacted_Script({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+  display: "fallback",
+  variable: "--ff-redacted",
 });
 
 export const metadata: Metadata = {
@@ -21,10 +28,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <meta charSet="utf-8" />
-      <body className={nunito.className}>
+      <body className={(nunito.className, redactedFont.variable)}>
         <main
           className="bg-blue-dark min-h-screen 
-            flex items-center justify-center px-5 md:px-12
+            flex items-center justify-center  flex-col
           "
         >
           {children}
