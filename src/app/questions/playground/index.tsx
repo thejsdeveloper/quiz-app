@@ -51,7 +51,7 @@ function Playground() {
   };
 
   const checkResults = () => {
-    router.push("questions/summery");
+    router.push("/questions/summery");
   };
 
   return (
@@ -59,7 +59,9 @@ function Playground() {
       className="flex flex-col
         min-h-[80vh]
         px-4 md:px-6 lg:px-8 
-        py-6 md:py-12 rounded-lg text-white bg-blue-gray w-full md:w-2/3"
+        py-6 md:py-12 
+        mx-5 md:mx-12
+        rounded-lg text-white bg-blue-gray w-auto lg:w-2/3"
     >
       <p className="text-sub uppercase">
         Question {currentStep} of {totalQuestions}
