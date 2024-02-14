@@ -21,7 +21,7 @@ export default function Navigation() {
   return (
     <div className="isolate sticky bottom-0 z-50 w-full bg-white">
       <div
-        className="flex justify-center gap-6 w-full lg:w-2/3 
+        className="flex flex-col md:flex-row justify-center gap-6 w-full lg:w-2/3 
                   px-4 md:px-6 lg:px-8 
                   py-5 mx-auto"
       >

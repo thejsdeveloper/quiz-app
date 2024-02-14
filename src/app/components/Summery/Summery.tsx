@@ -17,7 +17,7 @@ export default function SummeryPage() {
 
   return (
     <>
-      <section className="w-auto lg:w-2/3 py-6 mx-5 md:mx-12  ">
+      <section className="w-auto lg:w-2/3 py-6 mx-5 md:mx-12">
         <NextUIProvider>
           <div
             className="flex flex-row items-center gap-6

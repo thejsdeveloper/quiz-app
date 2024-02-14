@@ -19,7 +19,7 @@ function Loading() {
         px-4 md:px-6 lg:px-8 
         py-6 md:py-12 
         mx-5 md:mx-12
-        rounded-lg text-white bg-blue-gray w-auto lg:w-2/3"
+        rounded-lg text-white bg-blue-gray w-11/12 lg:w-2/3"
     >
       <p className="text-sub">
         Question <span className="redacted">1</span> of
