@@ -57,22 +57,25 @@ function Playground() {
   return (
     <section
       className="flex flex-col
-        min-h-[80vh]
+        min-h-[89vh]
+        md:min-h-[80vh]
         px-4 md:px-6 lg:px-8 
         py-6 md:py-12 
         mx-5 md:mx-12
-        rounded-lg text-white bg-blue-gray w-auto lg:w-2/3"
+        my-6 
+        rounded-lg text-white bg-blue-gray w-auto md:w-11/12 lg:w-2/3"
     >
       <p className="text-sub uppercase">
         Question {currentStep} of {totalQuestions}
       </p>
-      <h2 className="mt-3 mb-12">{currentQuestion.question}</h2>
+      <h2 className="mt-3 mb-6 md:mb-12">{currentQuestion.question}</h2>
       {currentQuestion.options.map((option) => (
         <button
           key={`${option}`}
-          className={["group btn-option my-6", getButtonClass(option)].join(
-            " "
-          )}
+          className={[
+            "group btn-option my-2 md:my-6",
+            getButtonClass(option),
+          ].join(" ")}
           data-attempted={hasAttemptedQuestion}
           onClick={() => handleAnswer(option)}
         >
@@ -89,10 +92,10 @@ function Playground() {
           />
         </button>
       ))}
-      <div className="flex flex-col items-center mt-10">
+      <div className="flex flex-col items-center mt-5 md:mt-10">
         {showNextButton && (
           <button
-            className="btn btn-primary rounded-full p-4 md:w-1/3"
+            className="btn btn-primary rounded-full p-4 w-full lg:w-1/3"
             onClick={goToNextQuestion}
           >
             Next Question
@@ -100,7 +103,7 @@ function Playground() {
         )}
         {showResultButton && (
           <button
-            className="btn btn-primary rounded-full p-4 md:w-1/3"
+            className="btn btn-primary rounded-full p-4 w-full lg:w-1/3"
             onClick={checkResults}
           >
             Check your result
