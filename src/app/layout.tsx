@@ -38,6 +38,8 @@ export default function RootLayout({
           {children}
         </main>
       </body>
+      {/* @ts-ignore */}
+      <bds />
     </html>
   );
 }
