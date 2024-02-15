@@ -1,10 +1,26 @@
+"use client";
 import Image from "next/image";
 import logo from "#/assets/icons/logo.svg";
-import Link from "next/link";
+import { Variants, motion } from "framer-motion";
+import { useRouter } from "next/navigation";
+
+const variant: Variants = {
+  initial: {
+    opacity: 0,
+  },
+  animate: {
+    opacity: 1,
+    transition: { duration: 0.8, ease: "easeInOut" },
+  },
+};
 
 export default function Home() {
+  const router = useRouter();
   return (
-    <section
+    <motion.section
+      variants={variant}
+      initial="initial"
+      animate="animate"
       className="
         flex flex-col items-center justify-center
         gap-8
@@ -18,12 +34,12 @@ export default function Home() {
         Challenge yourself with randomly generated quizzes
       </h2>
 
-      <Link
+      <button
         className="btn bg-linear text-white w-full md:w-9/12 p-2 rounded-full"
-        href={"/questions"}
+        onClick={() => router.push("/questions")}
       >
         Let’s Get Started
-      </Link>
-    </section>
+      </button>
+    </motion.section>
   );
 }

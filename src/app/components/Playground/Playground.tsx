@@ -5,6 +5,37 @@ import Image from "next/image";
 import correctIcon from "#/assets/icons/correct-answer-icon.svg";
 import incorrectIcon from "#/assets/icons/wrong-answer-icon.svg";
 import { useRouter } from "next/navigation";
+import { Variants, motion } from "framer-motion";
+
+const variant: Variants = {
+  initial: {
+    x: 30,
+    opacity: 0,
+  },
+  animate: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeInOut",
+    },
+  },
+};
+
+const optionVariant: Variants = {
+  initial: {
+    x: -10,
+    opacity: 0,
+  },
+  animate: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeInOut",
+    },
+  },
+};
 
 function Playground() {
   const router = useRouter();
@@ -55,7 +86,7 @@ function Playground() {
   };
 
   return (
-    <section
+    <motion.section
       className="flex flex-col
         min-h-[89vh]
         md:min-h-[80vh]
@@ -69,8 +100,11 @@ function Playground() {
         Question {currentStep} of {totalQuestions}
       </p>
       <h2 className="mt-3 mb-6 md:mb-12">{currentQuestion.question}</h2>
-      {currentQuestion.options.map((option) => (
-        <button
+      {currentQuestion.options.map((option, i) => (
+        <motion.button
+          variants={optionVariant}
+          initial="initial"
+          animate="animate"
           key={`${option}`}
           className={[
             "group btn-option my-2 md:my-6",
@@ -90,27 +124,33 @@ function Playground() {
             alt=""
             className="hidden group-[.btn-incorrect]:block icon"
           />
-        </button>
+        </motion.button>
       ))}
       <div className="flex flex-col items-center mt-5 md:mt-10">
         {showNextButton && (
-          <button
+          <motion.button
+            variants={variant}
+            initial="initial"
+            animate="animate"
             className="btn btn-primary rounded-full p-4 w-full lg:w-1/3"
             onClick={goToNextQuestion}
           >
             Next Question
-          </button>
+          </motion.button>
         )}
         {showResultButton && (
-          <button
+          <motion.button
+            variants={variant}
+            initial="initial"
+            animate="animate"
             className="btn btn-primary rounded-full p-4 w-full lg:w-1/3"
             onClick={checkResults}
           >
             Check your result
-          </button>
+          </motion.button>
         )}
       </div>
-    </section>
+    </motion.section>
   );
 }
 
