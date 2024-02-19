@@ -1,4 +1,4 @@
-# Quiz App - In progress
+# Quiz App [🔗](https://thejsdeveloper-quiz-app.vercel.app/)
 
 <img alt="quiz app image" src="public/assets/images/project-preview.png">
 
